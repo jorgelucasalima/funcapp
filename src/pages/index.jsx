@@ -1,10 +1,13 @@
-
+import { Flex } from "@chakra-ui/react"
+import {Header} from "../components/Header"
+import { TabelaFuncionarios } from "../components/TabelaFuncionarios"
 
 export default function Home() {
   return (
-    <>
-    <h1>home - indexjsx</h1>
-    <button>botao</button>
-    </>
+    <Flex>
+      <Header />  
+      
+    
+    </Flex>
   )
 }
