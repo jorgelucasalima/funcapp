@@ -1,4 +1,4 @@
-import { Table, Tbody, Th, Td, Tr, TableCaption, Tfoot, Thead, Box } from '@chakra-ui/react';
+import { Table, Tbody, Th, Td, Tr, Thead, Box } from '@chakra-ui/react';
 
 
 export function TabelaFuncionarios() {
