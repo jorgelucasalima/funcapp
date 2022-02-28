@@ -15,6 +15,7 @@ export const theme = extendTheme({
       800: "#2D3748", // cor do body
       700: "#1A202C", // cor do header
       600: "#B9BACE", // cor das letras
+      500: "#EDEEEE", // cor letra dash
     },
     red: {
       500: "#E53E3E"
@@ -25,7 +26,7 @@ export const theme = extendTheme({
     global: {
       body: {
         color: "brand.900",
-        bg: "brand.50",
+        bg: "brand.800",
       }
     }
   }

@@ -1,5 +1,7 @@
-import { Table, Tbody, Th, Td, Tr, Thead, Box } from '@chakra-ui/react';
+import { Table, Tbody, Th, Td, Tr, Thead, Box, Icon } from '@chakra-ui/react';
+import { FiTrash, FiEdit } from "react-icons/fi";
 
+// incluir button antes do table
 
 export function TabelaFuncionarios() {
   return (
@@ -15,27 +17,34 @@ export function TabelaFuncionarios() {
       mt="10px"
       ml="20"
     >
-      <Table size='lg'>
+      
+      <Table size='lg' color='brand.600'>
       <Thead >
         <Tr>
-          <Th>id</Th>
           <Th>Nome</Th>
           <Th>Cargo</Th>
           <Th>Salário</Th>
+          <Th>Ações</Th>
         </Tr>
       </Thead>
       <Tbody>
         <Tr>
-          <Td>1653</Td>
           <Td>Jorge</Td>
           <Td>Desenvolvedor</Td>
-          <Td isNumeric>R$ 25.4</Td>
+          <Td>R$ 25.4</Td>
+          <Td>
+            <Icon as={FiEdit}/>
+            <Icon as={FiTrash}/>
+          </Td>
         </Tr>
         <Tr>
-          <Td>2323</Td>
           <Td>Ayra</Td>
           <Td>Médica</Td>
-          <Td isNumeric>R$ 30.48</Td>
+          <Td>R$ 25.4</Td>
+          <Td>
+            <Icon as={FiEdit}/>
+            <Icon as={FiTrash}/>
+          </Td>
         </Tr>
       </Tbody>
       

@@ -1,4 +1,5 @@
-import { SimpleGrid, Box } from '@chakra-ui/react'
+import { SimpleGrid, Box, Icon } from '@chakra-ui/react'
+
 
 export function Dashboard() {
   return(
@@ -8,6 +9,7 @@ export function Dashboard() {
       mt='4'
       ml='15'
       mr='15'  
+      color='brand.500'
     >
       <Box 
         bg='brand.850' 
