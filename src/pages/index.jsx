@@ -9,7 +9,6 @@ export default function Home() {
       as="main"
       height="100vh"
       flexDir="column"
-
     >
       <Header />  
       <Dashboard />
