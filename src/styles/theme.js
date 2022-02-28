@@ -3,7 +3,7 @@ import { extendTheme } from "@chakra-ui/react";
 export const theme = extendTheme({
 
   fonts: {
-    heading: "Poppins, sans-serif",
+    heading: "Poppins",
     body: "Poppins, sans-serif",
   },
 
@@ -11,6 +11,7 @@ export const theme = extendTheme({
   colors: {
     brand: {
       900: "#3C4178", // cor do button
+      850: "#444983", // cor fundo dash
       800: "#2D3748", // cor do body
       700: "#1A202C", // cor do header
       600: "#B9BACE", // cor das letras

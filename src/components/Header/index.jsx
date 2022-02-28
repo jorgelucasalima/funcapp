@@ -12,7 +12,7 @@ export function Header() {
       maxWidth='100%'
       h='20'
       mx='auto'
-      px={6}
+      px={9}
       align='center'
       bgColor='brand.700'
     >
