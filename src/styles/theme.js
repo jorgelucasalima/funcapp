@@ -16,6 +16,8 @@ export const theme = extendTheme({
       700: "#1A202C", // cor do header
       600: "#B9BACE", // cor das letras
       500: "#EDEEEE", // cor letra dash
+      400: "#A9AED6", // botão
+      300: "#1A202C", // cor do menu
     },
     red: {
       500: "#E53E3E"
