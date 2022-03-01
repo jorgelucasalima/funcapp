@@ -7,13 +7,14 @@ export function TabelaFuncionarios() {
   return (
     <Box
       as="table"
-      mt='30'
+      mt='4'
     >  
       <Button
         bg='brand.400'
         color='brand.300'
         mt='6'
         ml='8'
+        mb='4'
         height='60px'
         width='24'
         borderRadius='6'
