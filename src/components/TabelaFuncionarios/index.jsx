@@ -1,10 +1,29 @@
 import { Table, Tbody, Th, Td, Tr, Thead, Box, Icon, Button } from '@chakra-ui/react';
 import { FiTrash, FiEdit, FiPlus } from "react-icons/fi";
+import api from '../../services/api';
+import { useState, useEffect } from 'react';
+import { toast } from 'react-toastify';
 
 // incluir button antes do table
 
 export function TabelaFuncionarios() {
+
+  const [funcionarios, setFuncionarios] = useState([]);
+
+  useEffect(() => {
+    api.get('funcionarios')
+    .then(response => {
+      console.log(response.data);
+    })
+    .catch(error => {
+      toast("Erro ao carregar funcionários")
+    })
+  })
+    
+
+
   return (
+
     <Box
       as="table"
       mt='4'
@@ -39,18 +58,25 @@ export function TabelaFuncionarios() {
             <Th color='brand.500' width='8'>Ações</Th>
           </Tr>
         </Thead>
-        <Tbody >
-          <Tr>
-            <Td>Jorge</Td>
-            <Td>Desenvolvedor</Td>
-            <Td>R$ 25.4</Td>
-            <Td>
-              <Icon as={FiEdit} mr='2' boxSize='5' />
-              <Icon as={FiTrash} mr='2' boxSize='5' />
-            </Td>
-          </Tr>
-        </Tbody>
+
+  
+            <Tbody>
+              <Tr>
+                <Td>sddfs</Td>
+                <Td>sfsdf</Td>
+                <Td>sdfsdf</Td>
+                <Td>
+                  <Icon as={FiEdit} mr='2' boxSize='5' />
+                  <Icon as={FiTrash} mr='2' boxSize='5' />
+                </Td>
+              </Tr>
+            </Tbody>
+         
+        
+
       </Table>
     </Box>
+
+   
   )
 }
