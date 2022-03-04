@@ -59,21 +59,21 @@ export function TabelaFuncionarios() {
           </Tr>
         </Thead>
 
-  
-            <Tbody>
-              <Tr>
-                <Td>sddfs</Td>
-                <Td>sfsdf</Td>
-                <Td>sdfsdf</Td>
-                <Td>
-                  <Icon as={FiEdit} mr='2' boxSize='5' />
-                  <Icon as={FiTrash} mr='2' boxSize='5' />
-                </Td>
-              </Tr>
-            </Tbody>
+        <Tbody>
+          {funcionarios.map((funcionario, key) => (
+            <Tr key={funcionario.id}>
+              <Td>{funcionario.nome}</Td>
+              <Td>{funcionario.cargo}</Td>
+              <Td>{funcionario.salario}</Td>
+              <Td>
+                <Icon as={FiEdit} mr='2' boxSize='5' />
+                <Icon as={FiTrash} mr='2' boxSize='5' />
+              </Td>
+            </Tr>
+          ))}
+          
+        </Tbody>
          
-        
-
       </Table>
     </Box>
 
