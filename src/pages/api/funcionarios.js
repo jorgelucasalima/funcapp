@@ -1,9 +1,8 @@
 
 
 export default function Funcionarios(requent, response) {
-  response.status(200).json({
-    message: "Funcionarios",
-    data: [
+  response.status(200).json(
+    [
       {
         id: 1,
         nome: "Jorge Lima",
@@ -17,5 +16,5 @@ export default function Funcionarios(requent, response) {
         salario: "R$ 15.000,00",
       },
     ]
-  });
+  );
 }
