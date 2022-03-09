@@ -3,6 +3,8 @@ import { FiTrash, FiEdit, FiPlus } from "react-icons/fi";
 import api from '../../services/api';
 import { useState, useEffect, useRef } from 'react';
 import { toast } from 'react-toastify';
+import Modal from 'react'
+
 
 
 
@@ -15,20 +17,26 @@ export function TabelaFuncionarios() {
   useEffect(() => {
     api.get('funcionarios')
       .then(({data}) => {
-        if(mountedRef.current) {
-          setFuncionarios(data) //to vendo, uhmmmmmm
+          setFuncionarios(data) 
           console.log(data)
-        }
       })
       .catch(error => {
         toast("Erro ao carregar funcionários")
       })
   }, [])
+
   return (
     <Box
       as="table"
       mt='4'
     >
+      <Button
+        bg='brand.900'
+        ml='8'
+        mb='10'
+      >
+        <FiPlus size={20} color="#fff" />
+      </Button>
       <Table
         size='sm'
         ml='10'
