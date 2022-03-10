@@ -66,7 +66,7 @@ export function TabelaFuncionarios() {
           <ModalCloseButton />
           <ModalBody>
             
-            
+            aqui criar FormControl com imput
 
             <ModalFooter>
               <Button 
