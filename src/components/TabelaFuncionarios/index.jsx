@@ -1,18 +1,27 @@
-import { Table, Tbody, Th, Td, Tr, Thead, Box, Icon, Button } from '@chakra-ui/react';
+import { Input,Table, Tbody, Th, Td, Tr, Thead, Box, Icon, Button, 
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton, useDisclosure, FormControl, FormLabel, Form  } from '@chakra-ui/react';
 import { FiTrash, FiEdit, FiPlus } from "react-icons/fi";
 import api from '../../services/api';
 import { useState, useEffect, useRef } from 'react';
 import { toast } from 'react-toastify';
-import Modal from 'react'
 
 
-
-
-// incluir button antes do table
 
 export function TabelaFuncionarios() {
   const mountedRef = useRef(true);
   const [funcionarios, setFuncionarios] = useState([]);
+  const [camposInput, setCamposInput] = useState({
+    nome: '',
+    cargo: '',
+    salario: '',
+  })
+  const {isOpen, onOpen, onClose} = useDisclosure();
 
   useEffect(() => {
     api.get('funcionarios')
@@ -25,6 +34,17 @@ export function TabelaFuncionarios() {
       })
   }, [])
 
+
+  function mudarInput(event) {
+    camposInput[event.target.nome] = event.target.value
+    setCamposInput(camposInput)
+  }
+
+  function submitFormulario(event) {
+    event.preventDefault();
+  }
+
+
   return (
     <Box
       as="table"
@@ -34,9 +54,37 @@ export function TabelaFuncionarios() {
         bg='brand.900'
         ml='8'
         mb='10'
+        onClick={onOpen}
       >
         <FiPlus size={20} color="#fff" />
       </Button>
+
+      <Modal isOpen={isOpen} onClose={onClose}>
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>Cadastrar Funcionário</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
+            
+            
+
+            <ModalFooter>
+              <Button 
+                colorScheme='blue' 
+                mr={3} 
+                type='submit'
+              >
+                Salvar
+              </Button>
+            </ModalFooter>
+             
+          </ModalBody>
+
+          
+        </ModalContent>
+      </Modal>
+
+
       <Table
         size='sm'
         ml='10'
